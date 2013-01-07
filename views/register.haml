@@ -1,0 +1,26 @@
+- if @identity && @identity.errors.any?
+  .alert.alert-error
+    - @identity.errors.full_messages.each do |msg|
+      %ul.unstyled
+        %li= msg
+%form.form-horizontal{:action => "/auth/identity/register", :method => "POST"}
+  %fieldset
+    %legend Registration Form
+    .control-group
+      %label.control-label
+        Name
+      .controls
+        %input{:type => "input", :name => "name"}/
+    .control-group
+      %label.control-label
+        Email
+      .controls
+        %input{:type => "input", :name => "email"}
+    .control-group
+      %label.control-label
+        Password
+      .controls
+        %input{:type => "password", :name => "password"}
+    .control-group
+      .controls
+        %input{:type => :submit, :value => "Create account"}
