@@ -1,0 +1,25 @@
+!!! 5
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "UTF-8"}
+    %title Sinatra OmniAuth App
+    %link{:rel => "stylesheet", :href => "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" }/
+  %body
+    .navbar
+      .navbar-inner
+        .container
+          .brand Sinatra OmniAuth
+          -if logged_in?
+            .nav.nav-pills
+              %li
+                %a{:href => "/logout"} logout
+          - else
+            .nav.nav-pills
+              %li
+                %a{:href => "/login"} Login
+              %li
+                %a{:href => "/register"} Register
+    .container
+      = yield
+    %script{:src => "http://code.jquery.com/jquery-1.7.2.min.js"}
+    %script{:src => "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"}

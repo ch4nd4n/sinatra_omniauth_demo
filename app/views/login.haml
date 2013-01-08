@@ -1,0 +1,19 @@
+%form.form-horizontal{:action => "/auth/identity/callback", :method => "POST"}
+  %fieldset
+    %legend Login
+    -unless @error.nil?
+      .alert
+        =@error
+    .control-group
+      %label.control-label
+        Email
+      .controls
+        %input{:type => :text, :name => :auth_key}/
+    .control-group
+      %label.control-label
+        Password
+      .controls
+        %input{:type => :password, :name => :password}/
+    .control-group
+      .controls
+        %input{:type => :submit, :value => "Login"}
