@@ -1,3 +1,5 @@
+# Application routes listed here
+# Author:: Chandan Kumar (http://chandankumar.com)
 class AdminApp < Sinatra::Base
   get "/" do
     haml :index
