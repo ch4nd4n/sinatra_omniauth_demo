@@ -1,13 +1,10 @@
 class CreateUser < ActiveRecord::Migration
-  def up
-    create_table "identities" do |t|
-      t.string "name"
-      t.string "email", :null => false
-      t.string "password_digest", :null => false
+  def change
+    create_table :users do |t|
+      t.string :name
+      t.string :email
+      t.string :password_digest
+      t.string :role, :default => 'user'
     end
-  end
-
-  def down
-    delete_table "identities"
   end
 end

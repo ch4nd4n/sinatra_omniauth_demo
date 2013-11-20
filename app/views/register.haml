@@ -10,17 +10,22 @@
       %label.control-label
         Name
       .controls
-        %input{:type => "input", :name => "name"}/
+        %input{:type => "text", :name => "name"}/
     .control-group
       %label.control-label
         Email
       .controls
-        %input{:type => "input", :name => "email"}
+        %input{:type => "text", :name => "email"}/
     .control-group
       %label.control-label
         Password
       .controls
         %input{:type => "password", :name => "password"}
+    .control-group
+      %label.control-label
+        Confirm Password
+      .controls
+        %input{:type => "password", :name => "password_confirmation"}
     .control-group
       .controls
         %input{:type => :submit, :value => "Create account"}

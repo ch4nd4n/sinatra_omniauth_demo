@@ -23,11 +23,12 @@ class AdminApp < Sinatra::Base
   set :database, 'sqlite:///db/foo.db'
   use Rack::Session::Cookie
   use OmniAuth::Builder do
-    provider :identity, on_failed_registration: lambda { |env|
+    provider :identity, fields: [:email, :name], model: User, on_failed_registration: lambda { |env|
       status, headers, body = call env.merge("PATH_INFO" => '/register')
     }
     OmniAuth.config.on_failure = Proc.new { |env|
       OmniAuth::FailureEndpoint.new(env).redirect_to_failure
     }
   end
+
 end
