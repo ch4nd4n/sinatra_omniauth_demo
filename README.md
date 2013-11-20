@@ -12,6 +12,7 @@ Take  a look at the code to understand rest of it.
 * Use of Twitter Bootstrap(CDN reference)
 * Customized log in and registration page
 * Use of Identity Strategy
+* Simple role based sinatra routes.
 
 #### Rake Tasks
 
