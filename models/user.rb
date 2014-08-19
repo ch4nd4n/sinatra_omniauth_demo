@@ -10,7 +10,7 @@ class User < OmniAuth::Identity::Models::ActiveRecord
             :format     => { :with => email_regex },
             :uniqueness => { :case_sensitive => false }
 
-  def self.create_with_omniauth(info)
+  def self.create_with_omniauth(auth)
     create(name: auth['info']['name'])
   end
 end
